@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Create Curso</title>
+    <link rel="stylesheet" href="/static/create_alumno.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Crear nuevo curso</h1>
+    </header>
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <li><a href="create_curso">Crear curso</a></li>
+        <li><a href="create_alumno">Crear alu</a></li>
+        <li><a href="read_alumnos">Planilla</a></li>
+        <li><a href="update_alumno">Actualizar alu</a></li>
+      </ul>
+    </nav>
+    <div class="form-container">
+      <form action="/create_curso" method="post">
+        <div class="form-group">
+          <label for="nombre">nombre del curso:</label>
+          <input type="text" id="nombre" name="nombre" required />
+        </div>
+        <div class="form-group">
+          <button type="submit">Crear Curso</button>
+        </div>
+      </form>
+    </div>
+    {% if message %}
+    <div class="message-container">
+      <p class="message">{{ message }}</p>
+    </div>
+    {% endif %}
+  </body>
+</html>

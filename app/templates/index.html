@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Gestión de Alumnos</title>
+    <link rel="stylesheet" href="/static/style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+  </head>
+  <body>
+    <header>
+      <h1>Bienvenido a la Gestión de Cursos y Alumnos</h1>
+    </header>
+    <main>
+      <div class="container">
+        <div class="card">
+          <h2>Cargar curso</h2>
+          <p>Carga un nuevo <b>curso</b> en la base de datos.</p>
+          <a href="/create_curso" class="button">Cargar curso</a>
+        </div>
+        <div class="card">
+          <h2>Cargar alumno</h2>
+          <p>Carga un nuevo alumno en la base de datos.</p>
+          <a href="/create_alumno" class="button">Cargar alumno</a>
+        </div>
+        <div class="card">
+          <h2>Planilla de alumnos</h2>
+          <p>Ver todos los alumnos de la base de datos.</p>
+          <a href="/read_alumnos" class="button">Planilla</a>
+        </div>
+        <div class="card">
+          <h2>Actualizar alumno</h2>
+          <p>Actualiza la información de un alumno existente.</p>
+          <a href="/update_alumno" class="button">Actualizar Alumno</a>
+        </div>
+        <div class="card">
+          <h2>Borrar Alumno</h2>
+          <p>Elimina un alumno de la base de datos.</p>
+          <a href="/delete_alumno" class="button">Borrar Alumno</a>
+        </div>
+      </div>
+    </main>
+    <footer>
+      <p>&copy; San Judas Tadeo</p>
+    </footer>
+  </body>
+</html>

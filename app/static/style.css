@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+
+body,
+html {
+  font-family: Arial, sans-serif;
+  background-color: #000;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  cursor: url(/static/assets/cursorWhite.png) 16 16, auto !important;
+  font-family: poppins;
+}
+
+header {
+  background-color: #101010;
+  color: #fff;
+  padding: 4px 0;
+  text-align: center;
+}
+
+nav ul.menu {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background-color: #444;
+  margin: 0;
+}
+
+nav ul.menu li {
+  margin: 0 15px;
+}
+
+nav ul.menu li a.button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #00bcd4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+nav ul.menu li a.button:hover {
+  background-color: #0097a7;
+}
+
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+  transform: translate(0%, 20%);
+}
+
+.card {
+  background-color: #222;
+  border: 1px solid #00bcd4;
+  border-radius: 10px;
+  padding: 20px;
+  width: 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.card h2 {
+  margin: 0 0 10px;
+}
+
+.card p {
+  flex-grow: 1;
+}
+
+.card a.button {
+  text-decoration: none;
+  color: #fff;
+  background-color: #00bcd4;
+  padding: 10px 20px;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+  align-self: stretch;
+  text-align: center;
+}
+
+.card a.button:hover {
+  background-color: #0097a7;
+}
+
+footer {
+  color: #fff;
+  text-align: center;
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+}
+
+h1 {
+  margin: 1px;
+}
