@@ -7,6 +7,7 @@ from .database import engine, SessionLocal
 from . import models, crud, schemas
 from datetime import date
 from fastapi.responses import FileResponse
+from fastapi.responses import JSONResponse
 
 # Iniciar el server: uvicorn main:app --reload
 # uvicorn app.main:app --reload
@@ -79,6 +80,13 @@ async def update_alumno(request: Request, id: int = Form(...), nombre: str = For
     else:
         raise HTTPException(status_code=404, detail="Alumno no encontrado")
 
+@app.get("/get_alumno_json/{id}", response_class=JSONResponse)
+async def get_alumno_json(id: int, db: Session = Depends(get_db)):
+    alumno = crud.get_alumno(db, id)
+    if alumno:
+        return alumno  # JSONResponse devolverá los datos en formato JSON
+    else:
+        raise HTTPException(status_code=404, detail="Alumno no encontrado")
 #metodo read
 @app.get("/read_alumnos", response_class=HTMLResponse)
 async def read_alumnos(request: Request, db: Session = Depends(get_db)):
@@ -100,7 +108,7 @@ async def delete_alumno(request: Request, id: int = Form(...), db: Session = Dep
     else:
         raise HTTPException(status_code=404, detail="Alumno no encontrado")
     
-    
+#metodo icon    
 @app.get("/favicon.ico", include_in_schema=False)
 async def favicon():
     return FileResponse("app/static/assets/favicon.ico")

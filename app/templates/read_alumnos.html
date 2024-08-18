@@ -89,11 +89,26 @@
       </div>
     </main>
     <script >
-      function showUpdateForm(id) {
-  document.getElementById("updateId").value = id;
-  document.getElementById("updateForm").style.display = "block";
-  document.getElementById("deleteForm").style.display = "none";
-}
+
+  function showUpdateForm(id) {
+    document.getElementById("updateId").value = id;
+    document.getElementById("updateForm").style.display = "block";
+    document.getElementById("deleteForm").style.display = "none";
+
+    // Hacer la solicitud para obtener los datos del alumno
+    fetch(`/get_alumno_json/${id}`)
+      .then(response => response.json())
+      .then(data => {
+        // Rellenar los campos del formulario con los datos del alumno
+        document.getElementById("updateNombre").value = data.nombre;
+        document.getElementById("updateApellido").value = data.apellido;
+        document.getElementById("updateFechaNac").value = data.fecha_nac;
+        document.getElementById("updateCursoId").value = data.curso_id;
+      })
+      .catch(error => {
+        console.error("Error al obtener los datos del alumno:", error);
+      });
+  }
 
 function showDeleteForm(id) {
   document.getElementById("deleteId").value = id;

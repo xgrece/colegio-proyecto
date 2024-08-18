@@ -100,3 +100,10 @@ footer {
 h1 {
   margin: 1px;
 }
+
+p,
+h1,
+h2,
+h3 {
+  user-select: none;
+}

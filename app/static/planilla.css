@@ -176,3 +176,10 @@ nav ul li a:hover {
   flex-direction: column;
   gap: 5px;
 }
+
+p,
+h1,
+h2,
+h3 {
+  user-select: none;
+}
